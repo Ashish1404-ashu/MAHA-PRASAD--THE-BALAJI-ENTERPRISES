@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MahaPrasad — The Balaji Enterprises</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo.png" alt="MahaPrasad" class="logo" onerror="this.style.display='none'"/>
+        <div>
+          <h1>MahaPrasad</h1>
+          <div class="tag">The Balaji Enterprises — Authentic Thekua</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button id="btn-cart" aria-haspopup="dialog">Cart (<span id="cart-count">0</span>)</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Fresh homemade thekuas — delivered to your doorstep</h2>
+      <p>Choose from Gur Thekua, Sugar Thekua, Dry Fruit Thekua and special gift boxes.</p>
+      <a href="#products" class="btn-primary">Shop Thekuas</a>
+    </section>
+
+    <section id="products" class="products-grid" aria-live="polite">
+      <!-- Products injected by JS -->
+    </section>
+
+    <section class="about">
+      <h3>About MahaPrasad</h3>
+      <p>Traditional thekuas made with love and authentic recipes. We use high-quality ingredients and careful packaging to keep your thekuas crisp and delicious.</p>
+    </section>
+  </main>
+
+  <!-- Product modal -->
+  <div id="product-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside id="cart-drawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="close-cart">Close</button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">Total: ₹<span id="cart-total">0</span></div>
+      <button id="checkout-btn" class="btn-primary">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Checkout modal -->
+  <div id="checkout-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <button class="modal-close" id="checkout-close">✕</button>
+      <h3>Checkout</h3>
+      <form id="checkout-form" class="checkout-form">
+        <label>
+          Full name
+          <input name="name" required />
+        </label>
+        <label>
+          Phone
+          <input name="phone" required pattern="\\d{7,15}" placeholder="e.g. 9876543210" />
+        </label>
+        <label>
+          Address
+          <textarea name="address" required></textarea>
+        </label>
+
+        <div class="checkout-actions">
+          <button type="submit" class="btn-primary">Place Order</button>
+          <button type="button" id="checkout-cancel">Cancel</button>
+        </div>
+
+        <div id="checkout-msg" class="checkout-msg"></div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> AmahaPrasad — The Balaji Enterprises</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<button id="btn-cart" aria-haspopup="dialog">
+  🛒 Cart (<span id="cart-count">0</span>)
+</button>
